@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creación de páginas web profesionales y accesibles para PYMES y autónomos. Diseño responsive, SEO optimizado y 100% accesible.">
+    <meta name="keywords" content="creación página web, desarrollo web, diseño web responsivo, web accesible, PYMES, autónomos, diseño profesional">
+    <meta name="author" content="Alberto Ortiz - Consultor Accesibilidad Web">
+    <meta name="og:title" content="Creación de Páginas Web Profesionales y Accesibles">
+    <meta name="og:description" content="Tu página web profesional. Diseño moderno, accesible, SEO optimizado y enfocado en conversiones.">
+    <meta name="og:type" content="website">
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <title>Creación de Páginas Web | Profesional y Accesible</title>
+    
+    <style>
+        /* ========================================
+           RESET Y VARIABLES GLOBALES
+           ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066cc;
+            --primary-dark: #004499;
+            --primary-light: #e6f2ff;
+            --secondary: #ff6b35;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --accent: #00a86b;
+            --warning: #ff6b35;
+            --border-color: #e0e0e0;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            overflow-x: hidden;
+        }
+
+        /* ========================================
+           TIPOGRAFÍA
+           ======================================== */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--text-dark);
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            color: var(--text-dark);
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            color: var(--text-dark);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* ========================================
+           HEADER Y NAVEGACIÓN
+           ======================================== */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            color: var(--primary-dark);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cta-header {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .cta-header:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .cta-header::after {
+            display: none;
+        }
+
+        /* ========================================
+           MENÚ HAMBURGUESA
+           ======================================== */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            gap: 0.375rem;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-white);
+                border-bottom: 1px solid var(--border-color);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+                box-shadow: var(--shadow-sm);
+                display: block;
+            }
+
+            .nav-menu.active {
+                max-height: 500px;
+                overflow: visible;
+            }
+
+            .nav-menu ul {
+                flex-direction: column;
+                gap: 0;
+                align-items: flex-start;
+                padding: 1rem 2rem;
+            }
+
+            .nav-menu li {
+                width: 100%;
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 0.75rem 0;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .nav-menu li:last-child a {
+                border-bottom: none;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+        }
+
+        /* ========================================
+           BOTONES
+           ======================================== */
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:focus {
+            outline: 3px solid var(--primary-light);
+            outline-offset: 2px;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary:focus {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-accent:hover {
+            background-color: #008c56;
+            transform: translateY(-2px);
+        }
+
+        /* ========================================
+           CONTENEDOR Y GRID
+           ======================================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .section-light {
+            background-color: var(--bg-light);
+        }
+
+        .section-white {
+            background-color: var(--bg-white);
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: white;
+            margin-bottom: 1rem;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideInUp 0.8s ease-out 0.2s both;
+            line-height: 1.6;
+        }
+
+        .hero .badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            animation: slideInUp 0.8s ease-out 0.4s both;
+            font-weight: 500;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInUp 0.8s ease-out 0.6s both;
+        }
+
+        .hero .btn {
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+        }
+
+        .btn-primary-white {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        .btn-primary-white:hover {
+            background-color: var(--bg-light);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .hero .btn {
+                width: 100%;
+            }
+        }
+
+        /* ========================================
+           SECCIÓN DE CARACTERÍSTICAS
+           ======================================== */
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .feature-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* ========================================
+           SECCIÓN DE BENEFICIOS
+           ======================================== */
+        .benefit-item {
+            text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+        }
+
+        .benefit-item:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .benefit-item h3 {
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .benefit-item p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ========================================
+           SECCIÓN PROCESO
+           ======================================== */
+        .proceso-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+        }
+
+        .proceso-step {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .proceso-step:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .proceso-step h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--primary);
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .proceso-timeline {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           SECCIÓN CTA FINAL
+           ======================================== */
+        .cta-final {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+
+        .cta-final h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-final p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-final .btn {
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+        }
+
+        /* ========================================
+           PRICING
+           ======================================== */
+        .pricing-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: 'RECOMENDADO';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary);
+            color: white;
+            padding: 0.375rem 1rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .pricing-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 2rem;
+            color: white;
+        }
+
+        .pricing-header h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-header .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-header p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0;
+        }
+
+        .pricing-body {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-body ul {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .pricing-body li {
+            padding: 0.75rem 0;
+            padding-left: 1.75rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .pricing-body li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .pricing-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .pricing-cta .btn {
+            flex: 1;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           FORMULARIO
+           ======================================== */
+        .form-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .form-submit:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .form-submit:disabled {
+            background-color: var(--text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-message {
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            display: none;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .form-message.success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            display: block;
+        }
+
+        .form-message.error {
+            background-color: #ffebee;
+            color: #c62828;
+            display: block;
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-section h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+        }
+
+        /* ========================================
+           ANIMACIONES
+           ======================================== */
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ========================================
+           SCROLL REVEAL
+           ======================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .reveal.active {
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+
+        /* ========================================
+           ACCESIBILIDAD
+           ======================================== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Focus visible para navegación teclado */
+        *:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+        @media (max-width: 768px) {
+            .section {
+                padding: 3rem 1.5rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+            }
+
+            .header-container {
+                padding: 0.75rem 1rem;
+            }
+        }
+
+        /* Mejoras de contraste para accesibilidad */
+        body {
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
+
+        /* Modo oscuro (opcional) */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-white: #1a1a1a;
+                --bg-light: #2a2a2a;
+                --text-dark: #ffffff;
+                --text-light: #b3b3b3;
+                --border-color: #404040;
+            }
+
+            body {
+                background-color: var(--bg-white);
+                color: var(--text-dark);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ========================================
+         HEADER / NAVEGACIÓN
+         ======================================== -->
+    <header role="banner">
+        <div class="header-container">
+            <a href="index.html" class="logo" aria-label="Servicios Web - Ir al inicio">Creación Web</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menú de navegación" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav aria-label="Navegación principal" id="navMenu" class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#caracteristicas">Características</a></li>
+                    <li><a href="#proceso">Proceso</a></li>
+                    <li><a href="#precios">Precios</a></li>
+                    <li><a href="auditoria.html" class="cta-header btn">Auditoría</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
+    <section id="hero" class="hero" role="region" aria-labelledby="hero-title">
+        <div class="container">
+            <span class="badge">✓ Diseño profesional, moderno y completamente accesible</span>
+            <h1 id="hero-title">Tu página web profesional,<br>sin complicaciones</h1>
+            <p class="subtitle">
+                Creación de páginas web modernas y accesibles para PYMES y autónomos. Diseño responsivo, SEO optimizado y 100% WCAG compliant desde el inicio.
+            </p>
+            <div class="hero-cta">
+                <a href="#precios" class="btn btn-primary-white">Ver Precios</a>
+                <a href="#proceso" class="btn btn-secondary">Cómo Trabajamos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN DE CARACTERÍSTICAS
+         ======================================== -->
+    <section id="caracteristicas" class="section section-light" role="region" aria-labelledby="caracteristicas-title">
+        <div class="container">
+            <h2 id="caracteristicas-title" style="text-align: center; margin-bottom: 3rem;">¿Qué Incluye tu Página Web?</h2>
+
+            <div class="grid grid-2">
+                <!-- TARJETA 1: DISEÑO -->
+                <div class="feature-card reveal">
+                    <h3>🎨 Diseño Moderno</h3>
+                    <ul>
+                        <li>Interfaz limpia y profesional</li>
+                        <li>Responsive para móvil y escritorio</li>
+                        <li>Coherencia visual con tu marca</li>
+                        <li>Animaciones sutiles y fluidas</li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA 2: ACCESIBILIDAD -->
+                <div class="feature-card reveal">
+                    <h3>♿ 100% Accesible</h3>
+                    <ul>
+                        <li>Cumplication WCAG 2.1 AA</li>
+                        <li>Navegación teclado completa</li>
+                        <li>Contraste de colores optimizado</li>
+                        <li>Acceso para lectores de pantalla</li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA 3: SEO -->
+                <div class="feature-card reveal">
+                    <h3>🔍 SEO Optimizado</h3>
+                    <ul>
+                        <li>Estructuras HTML semántica</li>
+                        <li>Meta tags correctamente configuradas</li>
+                        <li>Sitemap.xml e indexación</li>
+                        <li>Velocidad y Core Web Vitals</li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA 4: MANTENIMIENTO -->
+                <div class="feature-card reveal">
+                    <h3>🛠️ Soporte Continuo</h3>
+                    <ul>
+                        <li>Mantenimiento técnico incluido</li>
+                        <li>Actualizaciones de seguridad</li>
+                        <li>Cambios y ajustes fáciles</li>
+                        <li>Soporte post-lanzamiento</li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA 5: CONVERSIÓN -->
+                <div class="feature-card reveal">
+                    <h3>💰 Enfocado en Resultados</h3>
+                    <ul>
+                        <li>Formularios optimizados</li>
+                        <li>CTAs estratégicamente ubicados</li>
+                        <li>Analytics integrado</li>
+                        <li>Velocidad y usabilidad máximas</li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA 6: SEGURIDAD -->
+                <div class="feature-card reveal">
+                    <h3>🔒 Seguridad Garantizada</h3>
+                    <ul>
+                        <li>HTTPS/SSL certificate incluido</li>
+                        <li>Protección GDPR cumplida</li>
+                        <li>Backups automáticos</li>
+                        <li>Protección contra ataques comunes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN DE BENEFICIOS
+         ======================================== -->
+    <section id="beneficios" class="section section-white" role="region" aria-labelledby="beneficios-title">
+        <div class="container">
+            <h2 id="beneficios-title" style="text-align: center; margin-bottom: 3rem;">Beneficios de tu Nueva Web</h2>
+
+            <div class="grid grid-3">
+                <div class="benefit-item reveal">
+                    <div class="benefit-icon">📈</div>
+                    <h3>Mayor Visibilidad</h3>
+                    <p>Posicionamiento en Google y buscadores. Tu negocio será encontrado por quien te busca.</p>
+                </div>
+
+                <div class="benefit-item reveal">
+                    <div class="benefit-icon">💼</div>
+                    <h3>Imagen Profesional</h3>
+                    <p>Genera confianza. Una web moderna es el mejor escaparate para tu marca.</p>
+                </div>
+
+                <div class="benefit-item reveal">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Conversiones</h3>
+                    <p>Diseñada para convertir. Cada elemento está optimizado para lograr tus objetivos de negocio.</p>
+                </div>
+
+                <div class="benefit-item reveal">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Acceso Móvil</h3>
+                    <p>Perfecta en cualquier dispositivo. Tus clientes acceden desde el teléfono, tablet o desktop.</p>
+                </div>
+
+                <div class="benefit-item reveal">
+                    <div class="benefit-icon">⏱️</div>
+                    <h3>Rápida y Ágil</h3>
+                    <p>Rendimiento máximo. Google premia la velocidad, tus usuarios la agradecen.</p>
+                </div>
+
+                <div class="benefit-item reveal">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Segura y Legal</h3>
+                    <p>Cumplimiento GDPR, WCAG y estándares web. Tu responsabilidad legal está cubierta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN PROCESO
+         ======================================== -->
+    <section id="proceso" class="section section-light" role="region" aria-labelledby="proceso-title">
+        <div class="container">
+            <h2 id="proceso-title" style="text-align: center; margin-bottom: 3rem;">Nuestro Proceso. Paso a Paso.</h2>
+
+            <div class="proceso-timeline">
+                <div class="proceso-step reveal">
+                    <h3><span class="step-number">1</span> Consulta Inicial</h3>
+                    <p>Entendemos tu negocio, objetivos, público y competencia. Diseñamos juntos la estrategia de tu web.</p>
+                </div>
+
+                <div class="proceso-step reveal">
+                    <h3><span class="step-number">2</span> Diseño</h3>
+                    <p>Creamos mockups y prototipos. Te mostraremos cómo se verá tu web en desktop, tablet y móvil.</p>
+                </div>
+
+                <div class="proceso-step reveal">
+                    <h3><span class="step-number">3</span> Desarrollo</h3>
+                    <p>Programamos tu web con HTML, CSS y JavaScript. Todo accesible, optimizado y SEO-ready desde el inicio.</p>
+                </div>
+
+                <div class="proceso-step reveal">
+                    <h3><span class="step-number">4</span> Testing y Lanzamiento</h3>
+                    <p>Probamos todo. Accesibilidad, rendimiento, seguridad. Luego lanzamos tu web a producción.</p>
+                </div>
+
+                <div class="proceso-step reveal">
+                    <h3><span class="step-number">5</span> Soporte Post</h3>
+                    <p>Monitoreo continuo, actualizaciones y ajustes. Tu web sigue evolucionando con tu negocio.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; padding: 2rem; background: white; border-radius: 8px; text-align: center; box-shadow: var(--shadow-sm);">
+                <p style="margin-bottom: 0;"><strong>⏱️ Duración típica:</strong> 3-6 semanas según complejidad del proyecto.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN PRECIOS
+         ======================================== -->
+    <section id="precios" class="section section-white" role="region" aria-labelledby="precios-title">
+        <div class="container">
+            <h2 id="precios-title" style="text-align: center; margin-bottom: 1rem;">Opciones de Presupuesto</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; font-size: 1.1rem;">
+                Elige el paquete que se adapta a tu negocio.
+            </p>
+
+            <div class="pricing-container">
+                <!-- BÁSICA -->
+                <div class="pricing-card reveal">
+                    <div class="pricing-header">
+                        <h3>Web Básica</h3>
+                        <p>Ideal para startups y autónomos</p>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price">Desde 1.200€</div>
+                        <ul>
+                            <li>Hasta 5 páginas</li>
+                            <li>Diseño responsivo</li>
+                            <li>100% accesible WCAG AA</li>
+                            <li>SEO básico</li>
+                            <li>1 email corporativo</li>
+                            <li>Hosting 1 año incluido</li>
+                            <li>Soporte 3 meses</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-primary" style="display: block; text-align: center;">Contactar</a>
+                    </div>
+                </div>
+
+                <!-- PROFESIONAL (FEATURED) -->
+                <div class="pricing-card featured reveal">
+                    <div class="pricing-header">
+                        <h3>Web Profesional</h3>
+                        <p>Lo más solicitado para empresas</p>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price">Desde 2.500€</div>
+                        <ul>
+                            <li>Hasta 10 páginas + blog</li>
+                            <li>Diseño personalizado completo</li>
+                            <li>100% accesible WCAG AA</li>
+                            <li>SEO avanzado</li>
+                            <li>5 emails corporativos</li>
+                            <li>Hosting + dominio 2 años</li>
+                            <li>Sistema de contacto</li>
+                            <li>Analytics integrado</li>
+                            <li>Soporte 6 meses</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-primary" style="display: block; text-align: center;">Empezar Ahora</a>
+                    </div>
+                </div>
+
+                <!-- PREMIUM -->
+                <div class="pricing-card reveal">
+                    <div class="pricing-header">
+                        <h3>Web Pro Plus</h3>
+                        <p>Para empresas con requisitos avanzados</p>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price">Desde 4.500€</div>
+                        <ul>
+                            <li>Ilimitadas páginas + blog avanzado</li>
+                            <li>Diseño UI/UX personalizado</li>
+                            <li>100% accesible WCAG AAA</li>
+                            <li>SEO enterprise</li>
+                            <li>Emails ilimitados</li>
+                            <li>Hosting premium 3 años</li>
+                            <li>E-commerce integrado</li>
+                            <li>Newsletter automática</li>
+                            <li>Soporte prioritario ilimitado</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-primary" style="display: block; text-align: center;">Consultar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; padding: 1.5rem; background: var(--bg-light); border-radius: 8px;">
+                <p style="margin-bottom: 0.5rem;"><strong>¿Tienes un proyecto único?</strong></p>
+                <p style="margin-bottom: 0; color: var(--text-light);">Presupuestos custom según tus necesidades específicas. Cuéntanos qué necesitas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FORMULARIO DE CONTACTO
+         ======================================== -->
+    <section id="contacto" class="section section-light" role="region" aria-labelledby="contacto-title">
+        <div class="container">
+            <h2 id="contacto-title" style="text-align: center; margin-bottom: 3rem;">Contacta Conmigo</h2>
+
+            <div class="form-container reveal">
+                <div class="form-message" id="formMessage"></div>
+                
+                <form id="contactForm" method="POST" action="https://formspree.io/f/xgopwwrb" novalidate>
+                    <div class="form-group">
+                        <label for="nombre">Nombre *</label>
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            name="nombre" 
+                            required 
+                            aria-required="true"
+                            placeholder="Tu nombre o empresa"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            aria-required="true"
+                            placeholder="tu@email.com"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="web">URL de tu Web (si tienes)</label>
+                        <input 
+                            type="url" 
+                            id="web" 
+                            name="web" 
+                            placeholder="https://tudominio.com"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje *</label>
+                        <textarea 
+                            id="mensaje" 
+                            name="mensaje"
+                            required
+                            aria-required="true"
+                            placeholder="Cuéntame sobre tu proyecto, presupuesto aproximado, plazos, etc."
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit">Enviar Solicitud</button>
+                </form>
+
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center;">
+                    <p style="color: var(--text-light); margin-bottom: 1rem;"><strong>O ponte en contacto directamente:</strong></p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://es.linkedin.com/in/alberto-ortiz-gonzalez" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" aria-label="Conecta en LinkedIn">
+                            LinkedIn
+                        </a>
+                        <a href="mailto:alberto-consultor@hotmail.com" class="btn btn-secondary" aria-label="Enviar email">
+                            Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN CTA FINAL
+         ======================================== -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="cta-final reveal">
+                <h2>¿Listo para tu web profesional?</h2>
+                <p>Empieza hoy. Consulta gratuita, sin compromiso. Hablemos de tus objetivos y encontremos la solución perfecta.</p>
+                <a href="mailto:alberto-consultor@hotmail.com" class="btn btn-primary-white">Solicitar Presupuesto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Desarrollo Web</h4>
+                <p>Consultor profesional en accesibilidad digital. Creo webs modernas, accesibles y enfocadas en resultados para tu negocio.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <div class="footer-links">
+                    <a href="#caracteristicas">Características</a>
+                    <a href="#proceso">Mi Proceso</a>
+                    <a href="#precios">Precios</a>
+                    <a href="index.html">Inicio</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Otros Servicios</h4>
+                <div class="footer-links">
+                    <a href="auditoria.html">Auditoría Accesibilidad</a>
+                    <a href="https://albertoruler.github.io/web/" target="_blank" rel="noopener noreferrer">Mi CV</a>
+                    <a href="https://es.linkedin.com/in/alberto-ortiz-gonzalez" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Alberto Ortiz - Consultor Accesibilidad Web. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         SCRIPT DE FUNCIONALIDAD
+         ======================================== -->
+    <script>
+        // =====================================
+        // MENÚ HAMBURGUESA
+        // =====================================
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = navMenu ? navMenu.querySelectorAll('a') : [];
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                menuToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active'));
+            });
+        }
+
+        // Cerrar menú al hacer clic en un enlace
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // =====================================
+        // SCROLL REVEAL - Animaciones en scroll
+        // =====================================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // =====================================
+        // SMOOTH SCROLL para navegación
+        // =====================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // =====================================
+        // FORMULARIO DE CONTACTO
+        // =====================================
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        if (form) {
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+                const submitBtn = form.querySelector('.form-submit');
+                const originalText = submitBtn.textContent;
+
+                try {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Enviando...';
+
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        formMessage.textContent = '✓ ¡Gracias! He recibido tu solicitud. Te responderé en las próximas 24 horas.';
+                        formMessage.className = 'form-message success';
+                        form.reset();
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+
+                        // Limpiar mensaje después de 5 segundos
+                        setTimeout(() => {
+                            formMessage.className = 'form-message';
+                        }, 5000);
+                    } else {
+                        throw new Error('Error al enviar');
+                    }
+                } catch (error) {
+                    formMessage.textContent = '✗ Error al enviar el formulario. Por favor, intenta de nuevo o usa LinkedIn.';
+                    formMessage.className = 'form-message error';
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
+            });
+        }
+
+        // =====================================
+        // GOOGLE ANALYTICS (descomentar y personalizar)
+        // =====================================
+        // window.dataLayer = window.dataLayer || [];
+        // function gtag(){dataLayer.push(arguments);}
+        // gtag('js', new Date());
+        // gtag('config', 'GA_MEASUREMENT_ID');
+
+        // =====================================
+    </script>
+</body>
+</html>
