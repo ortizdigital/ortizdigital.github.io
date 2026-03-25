@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Auditorías profesionales de accesibilidad web. Cumplimiento WCAG, normativa europea y aumento de conversiones. Consultor especialista en accesibilidad.">
-    <meta name="keywords" content="auditoría accesibilidad web, WCAG, accesibilidad digital, normativa europea, análisis web">
+    <meta name="description" content="Creación de páginas web profesionales y accesibles para PYMES y autónomos. Diseño responsive, SEO optimizado y 100% accesible.">
+    <meta name="keywords" content="creación página web, desarrollo web, diseño web responsivo, web accesible, PYMES, autónomos, diseño profesional">
     <meta name="author" content="Alberto Ortiz - Consultor Accesibilidad Web">
-    <meta name="og:title" content="Auditorías Profesionales de Accesibilidad Web">
-    <meta name="og:description" content="Convierte tu web en accesible. Cumple normativa, reduce riesgos legales y mejora conversiones.">
+    <meta name="og:title" content="Creación de Páginas Web Profesionales y Accesibles">
+    <meta name="og:description" content="Tu página web profesional. Diseño moderno, accesible, SEO optimizado y enfocado en conversiones.">
     <meta name="og:type" content="website">
     
     <link rel="icon" type="image/png" href="favicon.png">
     
-    <title>Auditoría de Accesibilidad Web | Consultor Profesional</title>
+    <title>Creación de Páginas Web | Profesional y Accesible</title>
     
     <style>
         /* ========================================
@@ -313,17 +313,6 @@
             transform: translateY(-2px);
         }
 
-        .btn-outline {
-            border: 2px solid var(--text-dark);
-            color: var(--text-dark);
-            background-color: transparent;
-        }
-
-        .btn-outline:hover {
-            background-color: var(--text-dark);
-            color: white;
-        }
-
         /* ========================================
            CONTENEDOR Y GRID
            ======================================== */
@@ -434,55 +423,9 @@
         }
 
         /* ========================================
-           SECCIÓN PROBLEMA
+           SECCIÓN DE CARACTERÍSTICAS
            ======================================== */
-        .problema-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .problema-item {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .problema-icon {
-            flex-shrink: 0;
-            width: 40px;
-            height: 40px;
-            background-color: var(--warning);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        .problema-content h4 {
-            margin-top: 0;
-            color: var(--text-dark);
-        }
-
-        .problema-content p {
-            margin-bottom: 0;
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 768px) {
-            .problema-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ========================================
-           SECCIÓN SOLUCIÓN
-           ======================================== */
-        .servicio-card {
+        .feature-card {
             background-color: white;
             border-radius: 8px;
             padding: 2rem;
@@ -491,22 +434,22 @@
             box-shadow: var(--shadow-sm);
         }
 
-        .servicio-card:hover {
+        .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lg);
         }
 
-        .servicio-card h3 {
+        .feature-card h3 {
             color: var(--primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        .servicio-card ul {
+        .feature-card ul {
             list-style: none;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
-        .servicio-card li {
+        .feature-card li {
             padding: 0.5rem 0;
             padding-left: 1.75rem;
             position: relative;
@@ -514,7 +457,7 @@
             line-height: 1.6;
         }
 
-        .servicio-card li::before {
+        .feature-card li::before {
             content: '✓';
             position: absolute;
             left: 0;
@@ -524,7 +467,7 @@
         }
 
         /* ========================================
-           SECCIÓN BENEFICIOS
+           SECCIÓN DE BENEFICIOS
            ======================================== */
         .benefit-item {
             text-align: center;
@@ -611,82 +554,38 @@
         }
 
         /* ========================================
-           SECCIÓN CREDIBILIDAD
+           SECCIÓN CTA FINAL
            ======================================== */
-        .credibilidad-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .credibilidad-item {
-            padding: 1.5rem;
-            background-color: white;
-            border-radius: 8px;
-            border-left: 3px solid var(--accent);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .credibilidad-item strong {
-            color: var(--primary);
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .credibilidad-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .credibilidad-links .btn {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        .problemas-reales {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .problema-real {
-            background-color: var(--primary-light);
-            padding: 1.5rem;
-            border-radius: 6px;
+        .cta-final {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
             text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
         }
 
-        .problema-real strong {
-            color: var(--primary);
-            display: block;
-            margin-bottom: 0.5rem;
+        .cta-final h2 {
+            color: white;
+            margin-bottom: 1rem;
         }
 
-        .problema-real em {
-            color: var(--text-light);
-            font-size: 0.875rem;
+        .cta-final p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        @media (max-width: 768px) {
-            .credibilidad-container {
-                grid-template-columns: 1fr;
-            }
-
-            .credibilidad-links {
-                flex-direction: column;
-            }
-
-            .credibilidad-links .btn {
-                width: 100%;
-            }
+        .cta-final .btn {
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
         }
 
         /* ========================================
-           SECCIÓN SERVICIOS / PRICING
+           PRICING
            ======================================== */
         .pricing-container {
             display: grid;
@@ -718,7 +617,7 @@
         }
 
         .pricing-card.featured::before {
-            content: 'MÁS POPULAR';
+            content: 'RECOMENDADO';
             position: absolute;
             top: -12px;
             left: 50%;
@@ -796,37 +695,6 @@
             .pricing-container {
                 grid-template-columns: 1fr;
             }
-        }
-
-        /* ========================================
-           SECCIÓN CTA FINAL
-           ======================================== */
-        .cta-final {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-            border-radius: 12px;
-            margin-bottom: 3rem;
-        }
-
-        .cta-final h2 {
-            color: white;
-            margin-bottom: 1rem;
-        }
-
-        .cta-final p {
-            color: rgba(255, 255, 255, 0.95);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-final .btn {
-            font-size: 1.1rem;
-            padding: 1rem 2rem;
         }
 
         /* ========================================
@@ -1121,7 +989,7 @@
          ======================================== -->
     <header role="banner">
         <div class="header-container">
-            <a href="index.html" class="logo" aria-label="Auditoría Web - Ir al inicio">Accesibilidad Web</a>
+            <a href="/" class="logo" aria-label="Servicios Web - Ir al inicio">Creación Web</a>
             <button class="menu-toggle" id="menuToggle" aria-label="Menú de navegación" aria-expanded="false" aria-controls="navMenu">
                 <span></span>
                 <span></span>
@@ -1129,13 +997,11 @@
             </button>
             <nav aria-label="Navegación principal" id="navMenu" class="nav-menu">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="#problema">El Problema</a></li>
-                    <li><a href="#solucion">Mi Servicio</a></li>
-                    <li><a href="#beneficios">Beneficios</a></li>
-                    <li><a href="#proceso">Cómo Trabajo</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#contacto" class="cta-header btn">Contacto</a></li>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="#caracteristicas">Características</a></li>
+                    <li><a href="#proceso">Proceso</a></li>
+                    <li><a href="#precios">Precios</a></li>
+                    <li><a href="/auditoria/" class="cta-header btn">Auditoría</a></li>
                 </ul>
             </nav>
         </div>
@@ -1146,332 +1012,264 @@
          ======================================== -->
     <section id="hero" class="hero" role="region" aria-labelledby="hero-title">
         <div class="container">
-            <span class="badge">✓ Especialista en Accesibilidad Web para PYMES y Agencias</span>
-            <h1 id="hero-title">Tu web debe ser accesible.<br>Y también convertir.</h1>
+            <span class="badge">✓ Diseño profesional, moderno y completamente accesible</span>
+            <h1 id="hero-title">Tu página web profesional,<br>sin complicaciones</h1>
             <p class="subtitle">
-                Auditorías profesionales de accesibilidad WCAG. Cumple normativa europea, reduce riesgos legales y aumenta conversiones.
+                Creación de páginas web modernas y accesibles para PYMES y autónomos. Diseño responsivo, SEO optimizado y 100% WCAG compliant desde el inicio.
             </p>
             <div class="hero-cta">
-                <a href="#contacto" class="btn btn-primary-white">Solicitar Auditoría Gratuita</a>
-                <a href="#solucion" class="btn btn-secondary">Ver cómo trabajo</a>
+                <a href="#precios" class="btn btn-primary-white">Ver Precios</a>
+                <a href="#proceso" class="btn btn-secondary">Cómo Trabajamos</a>
             </div>
         </div>
     </section>
 
     <!-- ========================================
-         SECCIÓN PROBLEMA
+         SECCIÓN DE CARACTERÍSTICAS
          ======================================== -->
-    <section id="problema" class="section section-white" role="region" aria-labelledby="problema-title">
+    <section id="caracteristicas" class="section section-light" role="region" aria-labelledby="caracteristicas-title">
         <div class="container">
-            <h2 id="problema-title" style="text-align: center; margin-bottom: 3rem;">¿Por qué es urgente ahora?</h2>
-            
-            <div class="problema-grid">
-                <div>
-                    <div class="problema-item">
-                        <div class="problema-icon">⚠</div>
-                        <div class="problema-content">
-                            <h4>Normativa Legal Obligatoria</h4>
-                            <p>La <strong>European Accessibility Act 2025</strong> obliga a todas las webs comerciales a cumplir WCAG 2.1 AA. Incumplimiento = multas y responsabilidad.</p>
-                        </div>
-                    </div>
-
-                    <div class="problema-item">
-                        <div class="problema-icon">📉</div>
-                        <div class="problema-content">
-                            <h4>Pérdida de Usuarios y Ventas</h4>
-                            <p>1 de cada 4 personas tiene algún tipo de discapacidad. Una web inaccesible excluye a millones de potenciales clientes.</p>
-                        </div>
-                    </div>
-
-                    <div class="problema-item">
-                        <div class="problema-icon">🔍</div>
-                        <div class="problema-content">
-                            <h4>Impacto en SEO</h4>
-                            <p>Google premia la accesibilidad. Una web inaccesible es una web penalizada en búsqueda y con peor experiencia de usuario.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="display: flex; align-items: center;">
-                    <div style="background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%); padding: 2.5rem; border-radius: 12px; color: white; text-align: center;">
-                        <p style="color: white; font-size: 1.2rem; margin-bottom: 0.5rem;"><strong>El 98.9% de webs tiene problemas de accesibilidad</strong></p>
-                        <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 0; font-size: 0.95rem;">Fuente: WebAIM Million Report 2024</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         SECCIÓN SOLUCIÓN
-         ======================================== -->
-    <section id="solucion" class="section section-light" role="region" aria-labelledby="solucion-title">
-        <div class="container">
-            <h2 id="solucion-title" style="text-align: center; margin-bottom: 3rem;">Qué entrega mi auditoría</h2>
+            <h2 id="caracteristicas-title" style="text-align: center; margin-bottom: 3rem;">¿Qué Incluye tu Página Web?</h2>
 
             <div class="grid grid-2">
-                <div class="servicio-card reveal">
-                    <h3>📊 Informe Ejecutivo Claro</h3>
-                    <p>Un informe en lenguaje de negocio (no técnico) que explica:</p>
+                <!-- TARJETA 1: DISEÑO -->
+                <div class="feature-card reveal">
+                    <h3>🎨 Diseño Moderno</h3>
                     <ul>
-                        <li>Problemas detectados y su impacto</li>
-                        <li>Cumplimiento legal actual</li>
-                        <li>Recomendaciones primerizadas</li>
+                        <li>Interfaz limpia y profesional</li>
+                        <li>Responsive para móvil y escritorio</li>
+                        <li>Coherencia visual con tu marca</li>
+                        <li>Animaciones sutiles y fluidas</li>
                     </ul>
                 </div>
 
-                <div class="servicio-card reveal">
-                    <h3>📋 Excel Detallado</h3>
-                    <p>Listado completo de incidencias:</p>
+                <!-- TARJETA 2: ACCESIBILIDAD -->
+                <div class="feature-card reveal">
+                    <h3>♿ 100% Accesible</h3>
                     <ul>
-                        <li>Severidad (crítica, mayor, menor)</li>
-                        <li>Estándar WCAG incumplido</li>
-                        <li>Ubicación exacta en la web</li>
-                        <li>Código de ejemplo</li>
+                        <li>Cumplication WCAG 2.1 AA</li>
+                        <li>Navegación teclado completa</li>
+                        <li>Contraste de colores optimizado</li>
+                        <li>Acceso para lectores de pantalla</li>
                     </ul>
                 </div>
 
-                <div class="servicio-card reveal">
-                    <h3>🎯 Plan de Acción Priorizado</h3>
-                    <p>Guía paso a paso para tu equipo:</p>
+                <!-- TARJETA 3: SEO -->
+                <div class="feature-card reveal">
+                    <h3>🔍 SEO Optimizado</h3>
                     <ul>
-                        <li>Qué reparar primero (by impact)</li>
-                        <li>Cómo solucionarlo (instrucciones técnicas reales)</li>
-                        <li>Recurso necesarios y timeline</li>
+                        <li>Estructuras HTML semántica</li>
+                        <li>Meta tags correctamente configuradas</li>
+                        <li>Sitemap.xml e indexación</li>
+                        <li>Velocidad y Core Web Vitals</li>
                     </ul>
                 </div>
 
-                <div class="servicio-card reveal">
-                    <h3>💬 Soporte Post-Auditoría</h3>
-                    <p>Acompañamiento en la implementación:</p>
+                <!-- TARJETA 4: MANTENIMIENTO -->
+                <div class="feature-card reveal">
+                    <h3>🛠️ Soporte Continuo</h3>
                     <ul>
-                        <li>Aclarar dudas técnicas</li>
-                        <li>Revisar soluciones propuestas</li>
-                        <li>Validar reparaciones</li>
+                        <li>Mantenimiento técnico incluido</li>
+                        <li>Actualizaciones de seguridad</li>
+                        <li>Cambios y ajustes fáciles</li>
+                        <li>Soporte post-lanzamiento</li>
                     </ul>
                 </div>
-            </div>
 
-            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: white; border-radius: 8px; border-left: 4px solid var(--accent);">
-                <p style="margin-bottom: 0; font-size: 1.1rem;"><strong>💡 Mi diferenciación:</strong> No solo detecto problemas. Te doy las soluciones exactas que tus developers necesitan para implementar.</p>
+                <!-- TARJETA 5: CONVERSIÓN -->
+                <div class="feature-card reveal">
+                    <h3>💰 Enfocado en Resultados</h3>
+                    <ul>
+                        <li>Formularios optimizados</li>
+                        <li>CTAs estratégicamente ubicados</li>
+                        <li>Analytics integrado</li>
+                        <li>Velocidad y usabilidad máximas</li>
+                    </ul>
+                </div>
+
+                <!-- TARJETA 6: SEGURIDAD -->
+                <div class="feature-card reveal">
+                    <h3>🔒 Seguridad Garantizada</h3>
+                    <ul>
+                        <li>HTTPS/SSL certificate incluido</li>
+                        <li>Protección GDPR cumplida</li>
+                        <li>Backups automáticos</li>
+                        <li>Protección contra ataques comunes</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ========================================
-         SECCIÓN BENEFICIOS
+         SECCIÓN DE BENEFICIOS
          ======================================== -->
     <section id="beneficios" class="section section-white" role="region" aria-labelledby="beneficios-title">
         <div class="container">
-            <h2 id="beneficios-title" style="text-align: center; margin-bottom: 3rem;">Beneficios Concretos para tu Negocio</h2>
+            <h2 id="beneficios-title" style="text-align: center; margin-bottom: 3rem;">Beneficios de tu Nueva Web</h2>
 
             <div class="grid grid-3">
                 <div class="benefit-item reveal">
-                    <div class="benefit-icon">⚖️</div>
-                    <h3>Cumplimiento Legal</h3>
-                    <p>Evita sanciones y responsabilidades legales. Cumpla con WCAG 2.1AA y normativa europea.</p>
+                    <div class="benefit-icon">📈</div>
+                    <h3>Mayor Visibilidad</h3>
+                    <p>Posicionamiento en Google y buscadores. Tu negocio será encontrado por quien te busca.</p>
                 </div>
 
                 <div class="benefit-item reveal">
-                    <div class="benefit-icon">👥</div>
-                    <h3>Más Usuarios</h3>
-                    <p>Llega a millones de personas con discapacidades. Amplía tu audiencia potencial +25%.</p>
+                    <div class="benefit-icon">💼</div>
+                    <h3>Imagen Profesional</h3>
+                    <p>Genera confianza. Una web moderna es el mejor escaparate para tu marca.</p>
                 </div>
 
                 <div class="benefit-item reveal">
-                    <div class="benefit-icon">💰</div>
-                    <h3>Aumento de Conversiones</h3>
-                    <p>Una web accesible es más usable para todos. Mejora conversión, retención y ROI.</p>
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Conversiones</h3>
+                    <p>Diseñada para convertir. Cada elemento está optimizado para lograr tus objetivos de negocio.</p>
                 </div>
 
                 <div class="benefit-item reveal">
-                    <div class="benefit-icon">🔍</div>
-                    <h3>Mejor SEO</h3>
-                    <p>Google premia la accesibilidad. Mejora tu posición en búsqueda y visibilidad online.</p>
+                    <div class="benefit-icon">📱</div>
+                    <h3>Acceso Móvil</h3>
+                    <p>Perfecta en cualquier dispositivo. Tus clientes acceden desde el teléfono, tablet o desktop.</p>
+                </div>
+
+                <div class="benefit-item reveal">
+                    <div class="benefit-icon">⏱️</div>
+                    <h3>Rápida y Ágil</h3>
+                    <p>Rendimiento máximo. Google premia la velocidad, tus usuarios la agradecen.</p>
                 </div>
 
                 <div class="benefit-item reveal">
                     <div class="benefit-icon">🛡️</div>
-                    <h3>Gestión de Riesgo</h3>
-                    <p>Protege tu marca. Evita críticas negativas y demandas por discriminación digital.</p>
-                </div>
-
-                <div class="benefit-item reveal">
-                    <div class="benefit-icon">✅</div>
-                    <h3>Implementación Clara</h3>
-                    <p>Tu equipo sabe exactamente qué hacer. Soluciones técnicas claras y priorizadas.</p>
+                    <h3>Segura y Legal</h3>
+                    <p>Cumplimiento GDPR, WCAG y estándares web. Tu responsabilidad legal está cubierta.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ========================================
-         SECCIÓN CÓMO TRABAJO
+         SECCIÓN PROCESO
          ======================================== -->
     <section id="proceso" class="section section-light" role="region" aria-labelledby="proceso-title">
         <div class="container">
-            <h2 id="proceso-title" style="text-align: center; margin-bottom: 3rem;">Mi Proceso. Paso a Paso.</h2>
+            <h2 id="proceso-title" style="text-align: center; margin-bottom: 3rem;">Nuestro Proceso. Paso a Paso.</h2>
 
             <div class="proceso-timeline">
                 <div class="proceso-step reveal">
-                    <h3><span class="step-number">1</span> Análisis Inicial</h3>
-                    <p>Recojo información sobre tu web: estructura, objetivos de negocio, público. Establecemos alcance y prioridades.</p>
+                    <h3><span class="step-number">1</span> Consulta Inicial</h3>
+                    <p>Entendemos tu negocio, objetivos, público y competencia. Diseñamos juntos la estrategia de tu web.</p>
                 </div>
 
                 <div class="proceso-step reveal">
-                    <h3><span class="step-number">2</span> Auditoría WCAG Completa</h3>
-                    <p>Evalúo tu web con herramientas profesionales (axe, Lighthouse) y validación manual. Detecto todos los problemas de accesibilidad.</p>
+                    <h3><span class="step-number">2</span> Diseño</h3>
+                    <p>Creamos mockups y prototipos. Te mostraremos cómo se verá tu web en desktop, tablet y móvil.</p>
                 </div>
 
                 <div class="proceso-step reveal">
-                    <h3><span class="step-number">3</span> Informe + Plan</h3>
-                    <p>Entrego informe ejecutivo, Excel detallado y plan de acción priorizado. Todo en lenguaje claro y accionable.</p>
+                    <h3><span class="step-number">3</span> Desarrollo</h3>
+                    <p>Programamos tu web con HTML, CSS y JavaScript. Todo accesible, optimizado y SEO-ready desde el inicio.</p>
                 </div>
 
                 <div class="proceso-step reveal">
-                    <h3><span class="step-number">4</span> Soporte Post-Auditoría</h3>
-                    <p>Tu equipo implementa las soluciones. Yo aclaro dudas, reviso y confirmo que funcione bien.</p>
+                    <h3><span class="step-number">4</span> Testing y Lanzamiento</h3>
+                    <p>Probamos todo. Accesibilidad, rendimiento, seguridad. Luego lanzamos tu web a producción.</p>
+                </div>
+
+                <div class="proceso-step reveal">
+                    <h3><span class="step-number">5</span> Soporte Post</h3>
+                    <p>Monitoreo continuo, actualizaciones y ajustes. Tu web sigue evolucionando con tu negocio.</p>
                 </div>
             </div>
 
             <div style="margin-top: 3rem; padding: 2rem; background: white; border-radius: 8px; text-align: center; box-shadow: var(--shadow-sm);">
-                <p style="margin-bottom: 0;"><strong>⏱️ Duración típica:</strong> 5-10 días hábiles según complejidad de la web.</p>
+                <p style="margin-bottom: 0;"><strong>⏱️ Duración típica:</strong> 3-6 semanas según complejidad del proyecto.</p>
             </div>
         </div>
     </section>
 
     <!-- ========================================
-         SECCIÓN CREDIBILIDAD
+         SECCIÓN PRECIOS
          ======================================== -->
-    <section id="credibilidad" class="section section-white" role="region" aria-labelledby="credibilidad-title">
+    <section id="precios" class="section section-white" role="region" aria-labelledby="precios-title">
         <div class="container">
-            <h2 id="credibilidad-title" style="text-align: center; margin-bottom: 3rem;">Por qué Confiar en Mí</h2>
-
-            <div class="credibilidad-container">
-                <div>
-                    <div class="credibilidad-item reveal">
-                        <strong>✓ Experiencia Comprobada</strong>
-                        <p>He trabajado con organismos públicos (con los requisitos de accesibilidad más exigentes). Esto garantiza que domino accesibilidad real, no solo teoría.</p>
-                    </div>
-
-                    <div class="credibilidad-item reveal">
-                        <strong>✓ Soluciones Reales para Pequeños Clientes</strong>
-                        <p>Entiendo que tienes presupuesto y tiempo limitados. Mis auditorías son prácticas, directas y orientadas a soluciones que puedas implementar sin complicaciones.</p>
-                    </div>
-
-                    <div class="credibilidad-item reveal">
-                        <strong>✓ Herramientas Profesionales</strong>
-                        <p>Uso axe, Lighthouse, validadores WCAG y análisis manual. Evaluación completa y fiable.</p>
-                    </div>
-
-                    <div class="credibilidad-links reveal">
-                        <a href="https://albertoruler.github.io/web/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Ver CV Completo</a>
-                        <a href="https://es.linkedin.com/in/alberto-ortiz-gonzalez" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">LinkedIn</a>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 style="margin-bottom: 2rem; color: var(--primary);">Problemas Reales que Detecté</h3>
-                    <div class="problemas-reales">
-                        <div class="problema-real reveal">
-                            <strong>Contraste Insuficiente</strong>
-                            <em>3.5:1 en lugar de 4.5:1</em>
-                        </div>
-                        <div class="problema-real reveal">
-                            <strong>Navegación Teclado Rota</strong>
-                            <em>Focus visible desaparecido</em>
-                        </div>
-                        <div class="problema-real reveal">
-                            <strong>Formularios Inaccesibles</strong>
-                            <em>Labels no asociados correctamente</em>
-                        </div>
-                        <div class="problema-real reveal">
-                            <strong>Alt Text Faltante</strong>
-                            <em>Imágenes críticas sin descripción</em>
-                        </div>
-                        <div class="problema-real reveal">
-                            <strong>Estructura HTML Pobre</strong>
-                            <em>Sin encabezados semánticos</em>
-                        </div>
-                        <div class="problema-real reveal">
-                            <strong>ARIA Mal Implementada</strong>
-                            <em>Atributos contradictorios</em>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         SECCIÓN SERVICIOS / PRICING
-         ======================================== -->
-    <section id="servicios" class="section section-light" role="region" aria-labelledby="servicios-title">
-        <div class="container">
-            <h2 id="servicios-title" style="text-align: center; margin-bottom: 1rem;">2 Opciones para tu Necesidad</h2>
+            <h2 id="precios-title" style="text-align: center; margin-bottom: 1rem;">Opciones de Presupuesto</h2>
             <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; font-size: 1.1rem;">
-                Elige según el tamaño y complejidad de tu web.
+                Elige el paquete que se adapta a tu negocio.
             </p>
 
             <div class="pricing-container">
                 <!-- BÁSICA -->
                 <div class="pricing-card reveal">
                     <div class="pricing-header">
-                        <h3>Auditoría Básica</h3>
-                        <p>Ideal para webs pequeñas/medianas</p>
+                        <h3>Web Básica</h3>
+                        <p>Ideal para startups y autónomos</p>
                     </div>
                     <div class="pricing-body">
-                        <div class="price">Desde 350€</div>
+                        <div class="price">Desde 1.200€</div>
                         <ul>
-                            <li>Auditoría WCAG 2.1 AA completa</li>
-                            <li>Informe ejecutivo en PDF</li>
-                            <li>Excel con incidencias</li>
-                            <li>Plan de acción básico</li>
-                            <li>Soporte vía email (7 días)</li>
-                            <li>Hasta 10 páginas</li>
+                            <li>Hasta 5 páginas</li>
+                            <li>Diseño responsivo</li>
+                            <li>100% accesible WCAG AA</li>
+                            <li>SEO básico</li>
+                            <li>1 email corporativo</li>
+                            <li>Hosting 1 año incluido</li>
+                            <li>Soporte 3 meses</li>
                         </ul>
-                        <a href="#contacto" class="btn btn-primary" style="display: block; text-align: center;">Solicitar</a>
+                        <a href="#contacto" class="btn btn-primary" style="display: block; text-align: center;">Contactar</a>
                     </div>
                 </div>
 
-                <!-- COMPLETA (FEATURED) -->
+                <!-- PROFESIONAL (FEATURED) -->
                 <div class="pricing-card featured reveal">
                     <div class="pricing-header">
-                        <h3>Auditoría Completa</h3>
-                        <p>Recomendado para empresas serias</p>
+                        <h3>Web Profesional</h3>
+                        <p>Lo más solicitado para empresas</p>
                     </div>
                     <div class="pricing-body">
-                        <div class="price">Desde 750€</div>
+                        <div class="price">Desde 2.500€</div>
                         <ul>
-                            <li>Todo de la Básica, más:</li>
-                            <li>Auditoría completa</li>
-                            <li>Presentación en llamada</li>
-                            <li>Recomendaciones personalizadas</li>
-                            <li>Revisar y validar soluciones</li>
-                            <li>Soporte 30 días post-auditoría</li>
-                            <li>Webs complejas sin límite de páginas</li>
+                            <li>Hasta 10 páginas + blog</li>
+                            <li>Diseño personalizado completo</li>
+                            <li>100% accesible WCAG AA</li>
+                            <li>SEO avanzado</li>
+                            <li>5 emails corporativos</li>
+                            <li>Hosting + dominio 2 años</li>
+                            <li>Sistema de contacto</li>
+                            <li>Analytics integrado</li>
+                            <li>Soporte 6 meses</li>
                         </ul>
-                        <a href="#contacto" class="btn btn-primary" style="display: block; text-align: center;">Solicitar</a>
+                        <a href="#contacto" class="btn btn-primary" style="display: block; text-align: center;">Empezar Ahora</a>
+                    </div>
+                </div>
+
+                <!-- PREMIUM -->
+                <div class="pricing-card reveal">
+                    <div class="pricing-header">
+                        <h3>Web Pro Plus</h3>
+                        <p>Para empresas con requisitos avanzados</p>
+                    </div>
+                    <div class="pricing-body">
+                        <div class="price">Desde 4.500€</div>
+                        <ul>
+                            <li>Ilimitadas páginas + blog avanzado</li>
+                            <li>Diseño UI/UX personalizado</li>
+                            <li>100% accesible WCAG AAA</li>
+                            <li>SEO enterprise</li>
+                            <li>Emails ilimitados</li>
+                            <li>Hosting premium 3 años</li>
+                            <li>E-commerce integrado</li>
+                            <li>Newsletter automática</li>
+                            <li>Soporte prioritario ilimitado</li>
+                        </ul>
+                        <a href="#contacto" class="btn btn-primary" style="display: block; text-align: center;">Consultar</a>
                     </div>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 3rem; padding: 1.5rem; background: white; border-radius: 8px;">
-                <p style="margin-bottom: 0.5rem;"><strong>¿Presupuesto custom?</strong></p>
-                <p style="margin-bottom: 0; color: var(--text-light);">Webs muy grandes o auditorías especializadas. Contacta para propuesta.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         SECCIÓN CTA FINAL
-         ======================================== -->
-    <section class="section section-white">
-        <div class="container">
-            <div class="cta-final reveal">
-                <h2>¿Tu web es accesible?</h2>
-                <p>La mayoría no lo es. Descubre qué problemas tienes y cómo solucionarlos en 5-10 días.</p>
-                <a href="#contacto" class="btn btn-primary-white">Solicitar Auditoría Gratuita</a>
+            <div style="text-align: center; margin-top: 3rem; padding: 1.5rem; background: var(--bg-light); border-radius: 8px;">
+                <p style="margin-bottom: 0.5rem;"><strong>¿Tienes un proyecto único?</strong></p>
+                <p style="margin-bottom: 0; color: var(--text-light);">Presupuestos custom según tus necesidades específicas. Cuéntanos qué necesitas.</p>
             </div>
         </div>
     </section>
@@ -1512,23 +1310,23 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="web">URL de tu Web *</label>
+                        <label for="web">URL de tu Web (si tienes)</label>
                         <input 
                             type="url" 
                             id="web" 
                             name="web" 
-                            required 
-                            aria-required="true"
                             placeholder="https://tudominio.com"
                         >
                     </div>
 
                     <div class="form-group">
-                        <label for="mensaje">Mensaje (opcional)</label>
+                        <label for="mensaje">Mensaje *</label>
                         <textarea 
                             id="mensaje" 
                             name="mensaje"
-                            placeholder="¿Tienes alguna pregunta o detalle específico?"
+                            required
+                            aria-required="true"
+                            placeholder="Cuéntame sobre tu proyecto, presupuesto aproximado, plazos, etc."
                         ></textarea>
                     </div>
 
@@ -1551,29 +1349,43 @@
     </section>
 
     <!-- ========================================
+         SECCIÓN CTA FINAL
+         ======================================== -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="cta-final reveal">
+                <h2>¿Listo para tu web profesional?</h2>
+                <p>Empieza hoy. Consulta gratuita, sin compromiso. Hablemos de tus objetivos y encontremos la solución perfecta.</p>
+                <a href="mailto:alberto-consultor@hotmail.com" class="btn btn-primary-white">Solicitar Presupuesto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
          FOOTER
          ======================================== -->
     <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-section">
-                <h4>Auditoría Web</h4>
-                <p>Consultor profesional en accesibilidad digital. Ayudo a empresas a cumplir normativa, mejorar UX y aumentar conversiones.</p>
+                <h4>Desarrollo Web</h4>
+                <p>Consultor profesional en accesibilidad digital. Creo webs modernas, accesibles y enfocadas en resultados para tu negocio.</p>
             </div>
 
             <div class="footer-section">
                 <h4>Enlaces Rápidos</h4>
                 <div class="footer-links">
-                    <a href="#solucion">Mi Servicio</a>
-                    <a href="#beneficios">Beneficios</a>
-                    <a href="#servicios">Servicios</a>
-                    <a href="#contacto">Contacto</a>
+                    <a href="#caracteristicas">Características</a>
+                    <a href="#proceso">Mi Proceso</a>
+                    <a href="#precios">Precios</a>
+                    <a href="/">Inicio</a>
                 </div>
             </div>
 
             <div class="footer-section">
-                <h4>Años de Experiencia</h4>
+                <h4>Otros Servicios</h4>
                 <div class="footer-links">
-                    <a href="https://albertoruler.github.io/web/" target="_blank" rel="noopener noreferrer">Mi CV Completo</a>
+                    <a href="/auditoria/">Auditoría Accesibilidad</a>
+                    <a href="https://albertoruler.github.io/web/" target="_blank" rel="noopener noreferrer">Mi CV</a>
                     <a href="https://es.linkedin.com/in/alberto-ortiz-gonzalez" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
             </div>
@@ -1613,7 +1425,7 @@
         });
 
         // =====================================
-        // SCROLL REVEAL
+        // SCROLL REVEAL - Animaciones en scroll
         // =====================================
         const observerOptions = {
             threshold: 0.1,
@@ -1634,54 +1446,7 @@
         });
 
         // =====================================
-        // FORMULARIO DE CONTACTO
-        // =====================================
-        const form = document.getElementById('contactForm');
-        const formMessage = document.getElementById('formMessage');
-
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            const formData = new FormData(form);
-            const submitBtn = form.querySelector('.form-submit');
-            const originalText = submitBtn.textContent;
-
-            try {
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Enviando...';
-
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    formMessage.textContent = '✓ ¡Gracias! He recibido tu solicitud. Te responderé en las próximas 24 horas.';
-                    formMessage.className = 'form-message success';
-                    form.reset();
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-
-                    // Limpiar mensaje después de 5 segundos
-                    setTimeout(() => {
-                        formMessage.className = 'form-message';
-                    }, 5000);
-                } else {
-                    throw new Error('Error al enviar');
-                }
-            } catch (error) {
-                formMessage.textContent = '✗ Error al enviar el formulario. Por favor, intenta de nuevo o usa LinkedIn.';
-                formMessage.className = 'form-message error';
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-
-        // =====================================
-        // SMOOTH SCROLL PARA NAVEGACIÓN
+        // SMOOTH SCROLL para navegación
         // =====================================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -1696,6 +1461,55 @@
         });
 
         // =====================================
+        // FORMULARIO DE CONTACTO
+        // =====================================
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        if (form) {
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+                const submitBtn = form.querySelector('.form-submit');
+                const originalText = submitBtn.textContent;
+
+                try {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Enviando...';
+
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        formMessage.textContent = '✓ ¡Gracias! He recibido tu solicitud. Te responderé en las próximas 24 horas.';
+                        formMessage.className = 'form-message success';
+                        form.reset();
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+
+                        // Limpiar mensaje después de 5 segundos
+                        setTimeout(() => {
+                            formMessage.className = 'form-message';
+                        }, 5000);
+                    } else {
+                        throw new Error('Error al enviar');
+                    }
+                } catch (error) {
+                    formMessage.textContent = '✗ Error al enviar el formulario. Por favor, intenta de nuevo o usa LinkedIn.';
+                    formMessage.className = 'form-message error';
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
+            });
+        }
+
+        // =====================================
         // GOOGLE ANALYTICS (descomentar y personalizar)
         // =====================================
         // window.dataLayer = window.dataLayer || [];
@@ -1704,9 +1518,6 @@
         // gtag('config', 'GA_MEASUREMENT_ID');
 
         // =====================================
-        // COOKIES Y CONSENTIMIENTO (opcional)
-        // =====================================
-        // Puedes implementar un banner de cookies aquí si lo necesitas
     </script>
 </body>
 </html>
